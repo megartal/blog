@@ -1,19 +1,19 @@
 "use strict"
 var postCount = 0;
 
-var Provider = function(){
-    data : []; 
-}
+function Provider(){};
+
+Provider.prototype.data = [];
 
 /**var data = {
     author  :"",
     title    :"", 
     body    :"", 
-    createDate    :"", 
+    date    :"", 
     comments    :[{
         isLiked :"",
         comment : "",
-        createDate : ""
+        date : ""
     }]
 }
 */
@@ -49,43 +49,6 @@ Provider.prototype.addComments = function(id, comnt, callback){
         });
     }
 };
-
-// test data
-new Provider().data = [
-    {
-        author          :"Akbar",
-        title           :"history", 
-        body            :"readying history is awesome!", 
-        createDate      : new Date(), 
-        comments        :[{
-            isLiked :true,
-            comment : "good point",
-            createDate : new Date()
-        }]
-    },
-    {
-        author          :"mohsen",
-        title           :"politics", 
-        body            :"readying politics is awesome!", 
-        createDate      : new Date(), 
-        comments        :[{
-            isLiked :false,
-            comment : "dis agree",
-            createDate : new Date()
-        }]
-    },
-    {
-        author          :"hadi",
-        title           :"sport", 
-        body            :"readying sport is awesome!", 
-        createDate      : new Date(), 
-        comments        :[{
-            isLiked :true,
-            comment : "sometimes :)",
-            createDate : new Date()
-        }]
-    }
-];
 
 exports.Provider = Provider;
     
